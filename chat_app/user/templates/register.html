@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="">
+        <style>
+            body            
+            {
+                background: #f5f5f5;
+            }
+
+            h5
+            {
+                font-weight: 400;
+            }
+
+            .container
+            {
+                margin-top: 80px;
+                width: 400px;
+                height: 800px;
+            }
+
+            .tabs .indicator
+            {
+                background-color: #e0f2f1;
+                height: 60px;
+                opacity: 0.3;
+            }
+
+            .form-container
+            {
+                padding: 40px;
+                padding-top: 10px;
+            }
+
+            .confirmation-tabs-btn
+            {
+                position: absolute;
+            }
+    </style>
+    </head>
+    <body>
+        <div class="container white z-depth-2">
+            <ul class="tabs teal">
+                <li class="tab col s3"><a class="white-text" href="#register">register</a></li>
+            </ul>
+            
+            <div id="register" class="col s12">
+                <form class="col s12" method="POST">
+                    {% csrf_token %}
+                    <div class="form-container">
+                        <h3 class="teal-text">Welcome</h3>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                {{form.first_name}}
+                                
+                            </div>
+                            <div class="input-field col s6">
+                                {{form.last_name}}
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                {{form.email}}
+                              
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                {{form.username}}
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="input-field col s12">
+                                {{form.password}}               
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                {{form.confirm_password}}
+                            </div>
+                        </div>
+                        <center>
+                            <button class="btn waves-effect waves-light teal" type="submit" name="action">Submit</button>
+                        </center>
+                        <center>
+                            <p class="text text-normal">Already a user? <span><a href="{% url 'login' %}" class="text text-links">Login</a></span></p>
+                        </center>
+                    </div>
+                </form>
+            </div>
+        </div>
+          
+    </body>
+</html>
