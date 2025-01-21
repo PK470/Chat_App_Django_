@@ -272,7 +272,8 @@
         <script>
             const currentUser = "{{ request.user.username }}";  // Username of the logged-in user
             const receiverUsername = "{{ receiver.username }}";  // Receiver's username
-            const url = `ws://127.0.0.1:8000/ws/chat/${receiverUsername}/`;  
+            const url = `wss://chat-app-django-q82c.onrender.com/ws/chat/${receiverUsername}/`;
+  
             const chatSocket = new WebSocket(url);
         
             chatSocket.onopen = function () {
